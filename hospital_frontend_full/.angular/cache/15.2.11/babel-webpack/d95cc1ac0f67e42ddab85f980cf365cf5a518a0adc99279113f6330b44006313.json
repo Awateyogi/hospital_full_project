@@ -1,0 +1,1 @@
+{"ast":null,"code":"export const jwtInterceptor = (req, next) => {\n  const t = localStorage.getItem('jwt');\n  return t ? next(req.clone({\n    setHeaders: {\n      Authorization: 'Bearer ' + t\n    }\n  })) : next(req);\n};","map":null,"metadata":{},"sourceType":"module","externalDependencies":[]}

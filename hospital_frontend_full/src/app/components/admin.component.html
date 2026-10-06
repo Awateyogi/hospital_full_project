@@ -1,0 +1,28 @@
+<h2>Admin Dashboard</h2>
+
+<button (click)="logout()">Logout</button>
+
+<hr />
+
+<h3>Add Doctor</h3>
+<input [(ngModel)]="newDoctor.name" placeholder="Doctor Name" />
+<input [(ngModel)]="newDoctor.specialty" placeholder="Specialty" />
+<button (click)="addDoctor()">Add</button>
+
+<h3>Doctors</h3>
+<ul>
+  <li *ngFor="let d of doctors; let i = index">
+    {{ d.name }} - {{ d.specialty }}
+    <button (click)="deleteDoctor(i)">Delete</button>
+  </li>
+</ul>
+
+<hr />
+
+<h3>Appointments</h3>
+<ul>
+  <li *ngFor="let a of appointments; let i = index">
+    {{ a }}
+    <button (click)="deleteAppointment(i)">Delete</button>
+  </li>
+</ul>
